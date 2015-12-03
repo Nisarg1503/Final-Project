@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+      
+          <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+      
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">   
+     
+       <!-- Latest   jQuery -->
+      <script src="https://code.jquery.com/jquery-2.1.4.min. js"></script>
+  
+      <!-- Latest compiled and minified   JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+  
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+
+  <body>
+       <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+            <!-- <a class="navbar-brand" href="#">
+                    <img src="/images/logo.png" style="border: 0; float: left; margin-right: 15px" alt="">
+            </a>-->
+   <ul class="nav navbar-nav">
+      <% if (title == "Home") { %>
+      <li class="active">
+        <% } else { %>
+        <li>
+        <% } %>
+        <a class="blog-nav-item" href="/">Home</a></li>
+      <% if (title == "About") { %>
+      <li class="active">
+        <% } else { %>
+        <li>
+        <% } %>
+        <a class="blog-nav-item" href="/about">About</a></li>
+      <% if (title == "survey") { %>
+      <li class="active">
+        <% } else { %>
+        <li>
+        <% } %>
+        <a class="blog-nav-item" href="/survey">Survey</a></li>
+      <% if (title == "Contact Me") { %>
+      <li class="active">
+        <% } else { %>
+        <li>
+        <% } %>
+        <a class="blog-nav-item" href="/contact">Contact</a></li>
+                    
+       <li><a class="blog-nav-item" href="/login">Login</a></li>
+            
+            
+          </ul>
+      </nav>
+           </div>
+      </div>
+    </body>
