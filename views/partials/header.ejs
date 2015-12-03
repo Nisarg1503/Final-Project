@@ -55,9 +55,16 @@
         <li>
         <% } %>
         <a class="blog-nav-item" href="/contact">Contact</a></li>
-                    
-       <li><a class="blog-nav-item" href="/login">Login</a></li>
-            
+             <li><a class="blog-nav-item" href="/logout">Logout</a></li>
+            <% } else { %>
+            <% if (title == "Login") { %>
+              <li class="active">
+                <% } else { %>
+                <li>
+                <% } %>        
+       <a class="blog-nav-item" href="/login">Login</a></li>
+            <% } %>
+
             
           </ul>
       </nav>
