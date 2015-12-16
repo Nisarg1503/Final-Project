@@ -21,7 +21,8 @@ mongoose.connection.on('error', function(){
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-//var businesscontacts = require(('./routes/businesscontacts'));
+//var survey = require('./routes/survey');
+
 
 var app = express();
 
@@ -56,7 +57,7 @@ app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
-//app.use('/businesscontacts', businesscontacts);
+//app.use('/educational', survey);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

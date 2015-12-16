@@ -88,4 +88,24 @@ router.get('/contact', function(req, res, next) {
 });
 
 
+/*Survey Pages*/
+
+/* Render the survey create Page */
+
+router.get('/educational/create', function (req, res, next) {
+    res.render('educational/create', {
+        title: 'create',
+        //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
+    });
+});
+
+/* Render the survey add Page */
+
+router.get('/educational/add', function (req, res, next) {
+    res.render('educational/add', {
+        title: 'Questions',
+        //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
+    });
+});
+
 module.exports = router;
