@@ -1,61 +1,49 @@
 <%- include partials/header.ejs %>
-
-
+  
 <style>
-body {background-color: #72777a;}
-
-    
-    form {
-	padding: 0 1% 0 1%;
-    align:"center";
-        margin-top: 0.5%;
-    }
-    label, input{
-        font-family: 'Abel', sans-serif;
-        letter-spacing:2px;
-        font-size:1.4em;
-        color:#E5EFFF;
-    }
-    contact {
-    
-    align:"center";
-    }
+body{
+ background-size: 1370px 800px;
+ background-image: url("../images/contact.png");    
+}
+area{
+ padding: 0 50%;
+ align:"center";
+ margin-top: 100%; 
+}
+section{
+ padding-top: 320px;
+ font-family: 'Abel', sans-serif;
+ letter-spacing:2px;
+ font-size:1.4em;
+ position: relative;
+ right: -80px;
+}
 </style>
 
-<div class="row">
-     <div class="col-md-6 col-md-offset-3">
+<div id="contact">
+ <area>
+       
+ <div class="col-xs-12 col-sm-6 col-md-8">
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.9745481347427!2d-79.647657!3d44.413168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882aa481809835d3%3A0xf78e0935f5dc15ed!2s368+Dunsmore+Ln%2C+Barrie%2C+ON+L4M+7B1!5e0!3m2!1sen!2sca!4v1449770082621" width="950" height="510" frameborder="5" style="border:5" allowfullscreen"></iframe>
+ </div>
+    
+ <section id="class">
+ <div align="left" class="col-xs-6 col-md-4">
+                    
+     
+<span class="fa fa-home"></span><b>JN survey builder</b><br>
+368, Dunsmore Lane<br>
+L4M 7B1<br>
+Barrie ON Canada<br>
+<span class="fa fa-envelope"></span><a color="#72777a" href="mailto:jnsurveybuilder@gmail.com">jnsurveybuilder@gmail.com</a><br>
+<span class="fa fa-home"></span> <b>Mon - Fri 9.00 AM - 5.00 PM</b>
 
-<form class="form-horizontal">
- 
-  <div class="form-group">
-    <label for="firstname">First Name</label>
-    <input type="firstname" class="form-control" id="firstname" placeholder="First Name">
-    </div>
-    <div class="form-group">
-    <label for="lastname">Last Name</label>
-    <input type="lastname" class="form-control" id="lastname" placeholder="Last Name">
-  </div>
-    
-    <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="Email Address">
-  </div>
-    
-    <div class="form-group">
-    <label for="message">Message</label>
-    
-        <textarea class="form-control" rows="8" placeholder="Ask me anything."></textarea>
-  </div>
-    
-    <!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-default">Send</button>
-    
- </form>
 </div>
+</section>
+</div>                 
 </div>
-
-
+</area>
+</div>
 </body>
 </html>
-
 <%- include partials/footer.ejs %>
