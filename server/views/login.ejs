@@ -1,21 +1,18 @@
 <% include partials/header.ejs %>
 <style>
-body{
- background-size: 1370px 800px;
- background-image: url("../images/login.png");    
-}
+body {background-color: #72777a;}
 
     main {
         padding-top: 75px;
         font-family: 'Abel', sans-serif;
         letter-spacing:2px;
         font-size:1.4em;
-        color:#00578f;
+        color:#E5EFFF;
         }
 
 </style>
 
-     <main class="container center-center">
+     <main class="container">
      <% if (messages.length > 0) { %>
         <div class="alert alert-danger"><%= messages %></div>
       <% } %>
@@ -37,4 +34,5 @@ body{
             </form>
          </div>
     </main>
+    <% include ./partials/boot.ejs %>
 <% include partials/footer.ejs %>

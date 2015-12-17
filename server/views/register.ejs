@@ -1,19 +1,14 @@
 <% include partials/header.ejs %>	
 <style>
-
-body{
- background-size: 1370px 800px;
- background-image: url("../images/register.png");    
-}
+body {background-color: #72777a;}
 
 main {
-        padding-top: 50px;
+        padding-top: 75px;
         font-family: 'Abel', sans-serif;
         letter-spacing:2px;
         font-size:1.4em;
-        color:#00578f;
-        
-		}
+        color:#E5EFFF;
+        }
 
 </style>
 
@@ -23,7 +18,7 @@ main {
 	<% if (messages.length > 0) { %>
         <div class="alert alert-danger"><%= messages %></div>
       <% } %>
-		<h1>Registration</h1>
+		<h1>User Registration</h1>
 		<div class="col-sm-4">
 			<form method="post">
 				<fieldset class="form-group">
@@ -45,7 +40,8 @@ main {
 				<fieldset class="form-group text-right">
 					<input type="submit" class="btn btn-success" value="Submit"/>
 				</fieldset>
-			</form>
+			</form
 		</div>
 	</main>
+	<% include ./partials/boot.ejs %>
 <% include partials/footer.ejs %>
