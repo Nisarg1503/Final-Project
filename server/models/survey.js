@@ -1,25 +1,27 @@
-// Import mongoose and bcrypt
+//Import mongoose bcrypt
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 
-// need an alias for mongoose.Schema
+//need an alias for mongoose.Schema
 var Schema = mongoose.Schema;
 
-// Define our user Schema
-var contactSchema = new Schema({
-    surveyTopic: String,
-    surveyQuestion: String,
-    surveyOption1: String,
-    surveyOption2: String,
-    surveyOption3: String,
-    surveyOption4: String,
-    salt: String,
-    provider: String,
-    providerId: String,
-    providerData: {},
-    created: Number,
-    updated: Number
+//Define our user Schema
+var SurveySchema = new Schema({
+	"username" : String,
+	"email" : String,
+	"title" : String,
+	"surveys" : [{
+		"question" : String,
+		"answers" : []}
+	],
+	"updated" : {
+		"type" : Date,
+		"default" : +new Date
+	}
 }, {
-    collection: 'ContactInfo'
+	"collection" : "survey"
 });
 
-module.exports = mongoose.model('Contact', contactSchema);
+
+
+module.exports = mongoose.model('Survey', SurveySchema);

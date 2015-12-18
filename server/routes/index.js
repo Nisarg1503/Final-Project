@@ -23,7 +23,7 @@ router.get('/login', function (req, res, next) {
         });
     }
     else {
-        return res.redirect('/users');
+        return res.redirect('/about');
     }
 });
 
@@ -91,7 +91,6 @@ router.get('/contact', function(req, res, next) {
 /*Survey Pages*/
 
 /* Render the survey create Page */
-
 router.get('/educational/create', function (req, res, next) {
     res.render('educational/create', {
         title: 'create',
@@ -100,7 +99,6 @@ router.get('/educational/create', function (req, res, next) {
 });
 
 /* Render the survey add Page */
-
 router.get('/educational/add', function (req, res, next) {
     res.render('educational/add', {
         title: 'Questions',
@@ -108,4 +106,11 @@ router.get('/educational/add', function (req, res, next) {
     });
 });
 
+/* Render the survey choice Page */
+router.get('/choice/multiple', function (req, res, next) {
+    res.render('choice/multiple', {
+        title: 'Multiple',
+        //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
+    });
+});
 module.exports = router;

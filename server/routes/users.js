@@ -22,8 +22,8 @@ router.get('/', requireAuth, function (req, res, next) {
             res.end(err);
         }
         else {
-            res.render('users/index', {
-                title: 'Users',
+            res.render('about', {
+                title: 'About',
                 users: users,
                 displayName: req.user ? req.user.displayName : ''
             });
