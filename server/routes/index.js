@@ -112,12 +112,14 @@ router.get('/educational/create', requireAuth, function (req, res, next) {
 
 
 /* Render the survey add Page */
+/*
 router.get('/educational/add', requireAuth, function (req, res, next) {
     res.render('educational/add', {
         title: 'Questions',
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
     });
 });
+*/
 
 /* Render the survey choice Page */
 router.get('/choice/multiple', requireAuth, function (req, res, next) {
@@ -126,6 +128,7 @@ router.get('/choice/multiple', requireAuth, function (req, res, next) {
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
     });
 });
+
 
 /* Render the survey choice Page */
 router.get('/choice/short', requireAuth, function (req, res, next) {
