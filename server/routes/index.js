@@ -113,4 +113,13 @@ router.get('/choice/multiple', function (req, res, next) {
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
     });
 });
+
+/* Render the survey choice Page */
+router.get('/choice/short', function (req, res, next) {
+    res.render('choice/short', {
+        title: 'Short Questions',
+        //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
+    });
+});
+
 module.exports = router;

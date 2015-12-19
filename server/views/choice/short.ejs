@@ -1,0 +1,41 @@
+
+
+<% include ../partials/header.ejs %>
+<style>
+body {background-color: #D6E0E5;
+ margin-bottom: 30px;}
+
+</style>
+<main class="container-fluid">
+	<h1 style="padding: 35px;">Add a New Survey</h1>
+    
+  <div class="panel panel-default panel-custom">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Short Question:</h3>
+                      </div>
+                      <div class="panel-body">
+                        <div>
+                   <label for="Question">Question</label>  
+                  <input type="text" placeholder="Enter the question here"  class="form-control question-bold" required autofocus/><br>
+                  
+                 <textarea class="form-group" name="content" style="height: 100px; width: 500px; ">
+                              </textarea>
+                        </div>
+                        <div class="col-md-2">
+                            <a type="submit" href="/choice/short" class="btn btn-info">Add New Question</a>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary">Submit Quetions</button>
+                        </div>
+                      </div>
+                    </div>
+                    
+
+                </div><br>
+	
+	
+	</form> 
+</main>
+
+<%- include ../partials/footer.ejs %>
+
