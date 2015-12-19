@@ -13,6 +13,8 @@ var SurveySchema = new Schema({
     surveyOption2: String,
     surveyOption3: String,
     surveyOption4: String,
+    surveyShort: String,
+    surveyAns: String,
     created: Number,
 	updated: Number
 }, {

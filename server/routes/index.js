@@ -122,14 +122,14 @@ router.get('/educational/add', requireAuth, function (req, res, next) {
 */
 
 /* Render the survey choice Page */
-/*
+
 router.get('/choice/multiple', requireAuth, function (req, res, next) {
     res.render('choice/multiple', {
         title: 'Multiple',
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
     });
 });
-*/
+
 
 /* process the submission of a new user */
 router.post('/choice/multiple', requireAuth, function (req, res, next) {
@@ -160,6 +160,27 @@ router.get('/choice/short', requireAuth, function (req, res, next) {
     res.render('choice/short', {
         title: 'Short Questions',
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
+    });
+});
+
+/* process the submission of a new user */
+router.post('/choice/short', requireAuth, function (req, res, next) {
+    var survey = new Survey(req.body);
+
+    survey.create({
+        surveyname: req.body.surveyName,
+        surveyShort: req.body.surveyShort,
+        surveyAns: req.body.surveyAns,
+        created: Date.now(),
+        updated: Date.now()
+    }, function (err, User) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.redirect('/educational/create');
+        }
     });
 });
 

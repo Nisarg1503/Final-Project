@@ -7,7 +7,7 @@ body {background-color: #D6E0E5;
 
 </style>
 <main class="container-fluid">
-	<h1 style="padding: 35px;">Add a New Survey</h1>
+	<h3 style="padding: 35px;">Add a New Survey</h3>
     
   <div class="panel panel-default panel-custom">
                       <div class="panel-heading">
@@ -16,18 +16,18 @@ body {background-color: #D6E0E5;
                       <div class="panel-body">
                         <div>
                         <label for="surveyname" >Survey Name</label>
-    									<input name="surveyname" id="SurveyName" placeholder="Survey Name" >
+    									</br><input name="surveyname" id="SurveyName" class="form-control" placeholder="Survey Name" required><br>
                    <label for="Question">Question</label>  
-                  <input type="text" placeholder="Enter the question here"  class="form-control question-bold" required autofocus/><br>
+                  <input type="text" placeholder="Enter the question here"  class="form-control question-bold" required/><br>
                   
                  <textarea class="form-group" name="content" style="height: 100px; width: 500px; ">
                               </textarea>
                         </div>
                         <div class="col-md-2">
-                            <a type="submit" href="/choice/short" class="btn btn-info">Add New Question</a>
+                            <a type="submit" href="/educational/create" class="btn btn-info">Add New Question</a>
                         </div>
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-primary">Submit Quetions</button>
+                            <a type="button" href="/educational/create" class="btn btn-primary">Submit Quetions</a>
                         </div>
                       </div>
                     </div>
