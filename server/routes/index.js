@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 var mongoose = require('mongoose');
-var survey = require('../models/survey');
+var Survey = require('../models/survey');
 
 /* Utility functin to check if page is authenticate */
 function requireAuth(req, res, next){
@@ -122,13 +122,38 @@ router.get('/educational/add', requireAuth, function (req, res, next) {
 */
 
 /* Render the survey choice Page */
+/*
 router.get('/choice/multiple', requireAuth, function (req, res, next) {
     res.render('choice/multiple', {
         title: 'Multiple',
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
     });
 });
+*/
 
+/* process the submission of a new user */
+router.post('/choice/multiple', requireAuth, function (req, res, next) {
+    var survey = new Survey(req.body);
+
+    survey.create({
+        surveyname: req.body.surveyName,
+        surveyQues: req.body.surveyQues,
+        surveyOption1: req.body.surveyOption1,
+        surveyOption2: req.body.surveyOption2,
+        surveyOption3: req.body.surveyOption3,
+        surveyOption4: req.body.surveyOption4,
+        created: Date.now(),
+        updated: Date.now()
+    }, function (err, User) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.redirect('/educational/create');
+        }
+    });
+});
 
 /* Render the survey choice Page */
 router.get('/choice/short', requireAuth, function (req, res, next) {

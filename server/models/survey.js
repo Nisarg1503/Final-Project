@@ -7,17 +7,14 @@ var Schema = mongoose.Schema;
 
 //Define our user Schema
 var SurveySchema = new Schema({
-	"username" : String,
-	"email" : String,
-	"title" : String,
-	"surveys" : [{
-		"question" : String,
-		"answers" : []}
-	],
-	"updated" : {
-		"type" : Date,
-		"default" : +new Date
-	}
+	surveyName: String,
+    surveyQues: String,
+    surveyOption1: String,
+    surveyOption2: String,
+    surveyOption3: String,
+    surveyOption4: String,
+    created: Number,
+	updated: Number
 }, {
 	"collection" : "survey"
 });
