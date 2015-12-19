@@ -3,6 +3,17 @@ var router = express.Router();
 var passport = require('passport');
 
 var mongoose = require('mongoose');
+var survey = require('../models/survey');
+
+/* Utility functin to check if page is authenticate */
+function requireAuth(req, res, next){
+
+  // check if the user is logged in
+  if(!req.isAuthenticated()){
+    res.redirect('/login');
+  }
+  next();
+}
 
 //////////----
 /* Render home page. */
@@ -29,7 +40,7 @@ router.get('/login', function (req, res, next) {
 
 /* Process the Login Request */
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/about',
+    successRedirect: '/survey',
     failureRedirect: '/login',
     failureFlash: true
 }));
@@ -91,15 +102,17 @@ router.get('/contact', function(req, res, next) {
 /*Survey Pages*/
 
 /* Render the survey create Page */
-router.get('/educational/create', function (req, res, next) {
+router.get('/educational/create', requireAuth, function (req, res, next) {
     res.render('educational/create', {
         title: 'create',
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
     });
 });
 
+
+
 /* Render the survey add Page */
-router.get('/educational/add', function (req, res, next) {
+router.get('/educational/add', requireAuth, function (req, res, next) {
     res.render('educational/add', {
         title: 'Questions',
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
@@ -107,7 +120,7 @@ router.get('/educational/add', function (req, res, next) {
 });
 
 /* Render the survey choice Page */
-router.get('/choice/multiple', function (req, res, next) {
+router.get('/choice/multiple', requireAuth, function (req, res, next) {
     res.render('choice/multiple', {
         title: 'Multiple',
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
@@ -115,7 +128,7 @@ router.get('/choice/multiple', function (req, res, next) {
 });
 
 /* Render the survey choice Page */
-router.get('/choice/short', function (req, res, next) {
+router.get('/choice/short', requireAuth, function (req, res, next) {
     res.render('choice/short', {
         title: 'Short Questions',
         //displayName: req.businesscontacts ? req.businesscontacts.displayName : ''
